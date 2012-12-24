@@ -209,6 +209,9 @@ function uploadcare_field_is_empty($item, $field) {
 
 function uploadcare_get_view_html($file_id, $settings)
 {
+	if (!$file_id) {
+		return '';
+	}
 	$public_key = variable_get('uploadcare_public_key');
 	$secret_key = variable_get('uploadcare_secret_key');
 	$api = new Uploadcare_Api($public_key, $secret_key);	
