@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for Uploadcare module.
+ */
+
+function uploadcare_schema() {
+  $schema = array();
+  $schema['uploadcare'] = array(
+    'fields' => array(
+      'file_id' => array('type' => 'varchar', 'length' => 120),
+      'filename' => array('type' => 'text'),
+    ),
+    'primary key' => array(
+      'file_id'
+    ),
+  );
+  return $schema;
+}
+
+/**
+ * Implements hook_field_schema().
+ */
+function uploadcare_field_schema($field) {  
+  return array(                  
+    'columns' => array(           
+      'uploadcare' => array(          
+        'type' => 'text',       
+      ), 
+    ), 
+  ); 
+}

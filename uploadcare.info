@@ -1,0 +1,7 @@
+name = Uploadcare
+description = "Uploadcare Drupal Module"
+core = 7.x
+project = "uploadcare"
+version = 1.0
+datestamp = "1356086737"
+configure = "admin/settings/uploadcare"

@@ -1,0 +1,34 @@
+<?php
+
+//load field hooks
+require_once DRUPAL_ROOT . '/modules/uploadcare/uploadcare.field.inc';
+
+function uploadcare_admin() {
+  $form = array();
+  $form['uploadcare_public_key'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Public Key'),
+    '#default_value' => variable_get('uploadcare_public_key', 'demopublickey'),
+    '#size' => 60,
+    '#maxlength' => 256,
+  );
+  $form['uploadcare_secret_key'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Secret Key'),
+    '#default_value' => variable_get('uploadcare_secret_key', 'demoprivatekey'),
+    '#size' => 60,
+    '#maxlength' => 256,
+  );  
+  return system_settings_form($form);
+}
+
+function uploadcare_menu() {
+     $items['admin/settings/uploadcare'] = array(
+          'title' => 'Uploadcare Settings',
+          'page callback' => 'drupal_get_form',
+          'page arguments' => array('uploadcare_admin'),
+          'access arguments' => array('administer uploadcare'),
+          'type' => MENU_NORMAL_ITEM
+     );
+     return $items;
+}
