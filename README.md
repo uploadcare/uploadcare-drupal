@@ -8,6 +8,7 @@ It's based on a [uploadcare-php][4] library.
 
 - Drupal 7.x+
 - PHP 5.2+
+- php-curl
 
 ## Install 
 
