@@ -218,26 +218,26 @@ function uploadcare_get_view_html($file_id, $settings)
 	
 	$is_image = $settings['is_image'];
 	
-	$crop = $settings['crop'];
-	$crop_width = $settings['crop_width'];
-	$crop_height = $settings['crop_height'];
-	$crop_center = $settings['crop_center'];
-	$crop_fill_color = $settings['crop_fill_color'];
+	$crop = isset($settings['crop']) ? $settings['crop'] : false;
+	$crop_width = isset($settings['crop_width']) ? $settings['crop_width'] : null;
+	$crop_height = isset($settings['crop_height']) ? $settings['crop_height'] : null;
+	$crop_center = isset($settings['crop_center']) ? $settings['crop_center'] : null;
+	$crop_fill_color = isset($settings['crop_fill_color']) ? $settings['crop_fill_color'] : false;
 	
-	$resize = $settings['resize'];
-	$resize_width = $settings['resize_width'];
-	$resize_height = $settings['resize_height'];
+	$resize = isset($settings['resize']) ? $settings['resize'] : false;
+	$resize_width = isset($settings['resize_width']) ? $settings['resize_width'] : null;
+	$resize_height = isset($settings['resize_height']) ? $settings['resize_width'] : null;
 	
-	$scale_crop = $settings['scale_crop'];
-	$scale_crop_width = $settings['scale_crop_width'];
-	$scale_crop_height = $settings['scale_crop_height'];
-	$scale_crop_center = $settings['scale_crop_center'];
+	$scale_crop = isset($settings['scale_crop']) ? $settings['scale_crop'] : false;
+	$scale_crop_width = isset($settings['scale_crop_width']) ? $settings['scale_crop_width'] : null;
+	$scale_crop_height = isset($settings['scale_crop_height']) ? $settings['scale_crop_height'] : null;
+	$scale_crop_center = isset($settings['scale_crop_center']) ? $settings['scale_crop_center'] : false;
 	
-	$flip = $settings['flip'];
-	$grayscale = $settings['grayscale'];
-	$invert = $settings['invert'];
-	$mirror = $settings['mirror'];
-	$stretch_off = $settings['stretch_off'];	
+	$flip = isset($settings['flip']) ? $settings['flip'] : false;
+	$grayscale = isset($settings['grayscale']) ? $settings['grayscale'] : false;
+	$invert = isset($settings['invert']) ? $settings['invert'] : false;
+	$mirror = isset($settings['mirror']) ? $settings['mirror'] : false;
+	$stretch_off = isset($settings['stretch_off']) ? $settings['stretch_off'] : false;	
 	
 	$file = $api->getFile($file_id);
 	$result = db_query('SELECT filename FROM {uploadcare} where file_id = :file_id', array(':file_id' => $file_id));
