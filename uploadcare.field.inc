@@ -171,11 +171,11 @@ function uploadcare_field_widget_form(&$form, &$form_state, $field, $instance, $
 		case 'uploadcare':
 			$element['uploadcare'] = array(
 			'#prefix' => uplodcare_field_widget_form_prefix(),
-			'#suffix' => uploadcare_field_widget_form_postfix($items[$delta]['uploadcare'], $field['settings']),
+			'#suffix' => @uploadcare_field_widget_form_postfix($items[$delta]['uploadcare'], $field['settings']),
 			'#type' => 'textfield',
 			'#title' => $element['#title'],
 			'#description' => $element['#description'],
-			'#default_value' => $items[$delta]['uploadcare'],
+			'#default_value' => @$items[$delta]['uploadcare'],
 			'#required' => $element['#required'],
 			'#weight' => isset($element['#weight']) ? $element['#weight'] : 0,
 			'#delta' => $delta,
