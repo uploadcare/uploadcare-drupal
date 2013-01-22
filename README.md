@@ -36,6 +36,11 @@ Just upload an image with new field and it will be displayed for the new content
 
 [More information on file operations can be found here][2]
 
+## Downloads
+
+**1.0.1** ([Download][https://ucarecdn.com/97902dac-c6be-4ab5-b07a-c5f40caa78a9/])
+* Bugfixes
+
 [1]: https://uploadcare.com/
 [2]: https://uploadcare.com/documentation/reference/basic/cdn.html
 [3]: http://drupal.org/
