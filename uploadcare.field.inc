@@ -22,97 +22,97 @@ function uploadcare_field_settings_form($field, $instance, $has_data) {
 			'#type' => 'checkbox',
 			'#title' => t('Is it an image?'),
 			'#required' => FALSE,
-			'#default_value' => $field['settings']['is_image'],
+			'#default_value' => isset($field['settings']['is_image']) ? $field['settings']['is_image'] : false,
 			'#description' => t('If the uploaded file is an image you will be able to use file operations'),
 	);
 	
 	$form['crop'] = array(
 			'#type' => 'checkbox',
 			'#title' => t('Crop'),
-			'#default_value' => $field['settings']['crop'],
+			'#default_value' => isset($field['settings']['crop']) ? $field['settings']['crop'] : false,
 	);
 	$form['crop_width'] = array(
 			'#type' => 'textfield',
 			'#title' => t('Crop width'),
-			'#default_value' => $field['settings']['crop_width'],
+			'#default_value' => isset($field['settings']['crop_width']) ? $field['settings']['crop_width'] : null,
 	);
 	$form['crop_height'] = array(
 			'#type' => 'textfield',
 			'#title' => t('Crop height'),
-			'#default_value' => $field['settings']['crop_height'],
+			'#default_value' => isset($field['settings']['crop_height']) ? $field['settings']['crop_height'] : null,
 	);		
 	$form['crop_center'] = array(
 			'#type' => 'checkbox',
 			'#title' => t('Center crop?'),
-			'#default_value' => $field['settings']['crop_center'],
+			'#default_value' => isset($field['settings']['crop_center']) ? $field['settings']['crop_center'] : false,
 	);
 	$form['crop_fill_color'] = array(
 			'#type' => 'textfield',
 			'#title' => t('Crop fill color'),
-			'#default_value' => $field['settings']['crop_fill_color'],
+			'#default_value' => isset($field['settings']['crop_fill_color']) ? $field['settings']['crop_fill_color'] : null,
 	);	
 
 	$form['resize'] = array(
 			'#type' => 'checkbox',
 			'#title' => t('Resize'),
-			'#default_value' => $field['settings']['resize'],
+			'#default_value' => isset($field['settings']['resize']) ? $field['settings']['resize'] : false,
 	);	
 	$form['resize_width'] = array(
 			'#type' => 'textfield',
 			'#title' => t('Resize width'),
-			'#default_value' => $field['settings']['resize_width'],
+			'#default_value' => isset($field['settings']['resize_width']) ? $field['settings']['resize_width'] : null,
 	);
 	$form['resize_height'] = array(
 			'#type' => 'textfield',
 			'#title' => t('Resize height'),
-			'#default_value' => $field['settings']['resize_height'],
+			'#default_value' => isset($field['settings']['resize_height']) ? $field['settings']['resize_height'] : null,
 	);
 	
 	$form['scale_crop'] = array(
 			'#type' => 'checkbox',
 			'#title' => t('Scale crop'),
-			'#default_value' => $field['settings']['scale_crop'],
+			'#default_value' => isset($field['settings']['scale_crop']) ? $field['settings']['scale_crop'] : false,
 	);
 	$form['scale_crop_width'] = array(
 			'#type' => 'textfield',
 			'#title' => t('Scale crop width'),
-			'#default_value' => $field['settings']['scale_crop_width'],
+			'#default_value' => isset($field['settings']['scale_crop_width']) ? $field['settings']['scale_crop_width'] : null,
 	);
 	$form['scale_crop_height'] = array(
 			'#type' => 'textfield',
 			'#title' => t('Resize crop height'),
-			'#default_value' => $field['settings']['scale_crop_height'],
+			'#default_value' => isset($field['settings']['scale_crop_height']) ? $field['settings']['scale_crop_height'] : null,
 	);
 	$form['scale_crop_center'] = array(
 			'#type' => 'checkbox',
 			'#title' => t('Scale center crop?'),
-			'#default_value' => $field['settings']['scale_crop_center'],
+			'#default_value' => isset($field['settings']['scale_crop_center']) ? $field['settings']['scale_crop_center'] : false,
 	);	
 
 	$form['flip'] = array(
 			'#type' => 'checkbox',
 			'#title' => t('Flip image?'),
-			'#default_value' => $field['settings']['flip'],
+			'#default_value' => isset($field['settings']['flip']) ? $field['settings']['flip'] : false,
 	);	
 	$form['grayscale'] = array(
 			'#type' => 'checkbox',
 			'#title' => t('Grayscale image?'),
-			'#default_value' => $field['settings']['grayscale'],
+			'#default_value' => isset($field['settings']['grayscale']) ? $field['settings']['grayscale'] : false,
 	);	
 	$form['invert'] = array(
 			'#type' => 'checkbox',
 			'#title' => t('Invert image?'),
-			'#default_value' => $field['settings']['invert'],
+			'#default_value' => isset($field['settings']['invert']) ? $field['settings']['invert'] : false,
 	);	
 	$form['mirror'] = array(
 			'#type' => 'checkbox',
 			'#title' => t('Mirror image?'),
-			'#default_value' => $field['settings']['mirror'],
+			'#default_value' => isset($field['settings']['mirror']) ? $field['settings']['mirror'] : false,
 	);	
 	$form['stretch_off'] = array(
 			'#type' => 'checkbox',
 			'#title' => t('Stretch off?'),			
-			'#default_value' => $field['settings']['stretch_off'],
+			'#default_value' => isset($field['settings']['stretch_off']) ? $field['settings']['stretch_off'] : false,
 	);
 	
 	return $form;
