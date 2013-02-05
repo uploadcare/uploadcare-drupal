@@ -1,8 +1,15 @@
 <?php
+/**
+ * @file
+ * Module
+ */
 
-//load field hooks
+// Load field hooks.
 require_once DRUPAL_ROOT . '/modules/uploadcare/uploadcare.field.inc';
 
+/**
+ * Admin settings.
+ */
 function uploadcare_admin() {
   $form = array();
   $form['uploadcare_public_key'] = array(
@@ -18,17 +25,20 @@ function uploadcare_admin() {
     '#default_value' => variable_get('uploadcare_secret_key', 'demoprivatekey'),
     '#size' => 60,
     '#maxlength' => 256,
-  );  
+  );
   return system_settings_form($form);
 }
 
+/**
+ * Admin menu.
+ */
 function uploadcare_menu() {
-     $items['admin/settings/uploadcare'] = array(
-          'title' => 'Uploadcare Settings',
-          'page callback' => 'drupal_get_form',
-          'page arguments' => array('uploadcare_admin'),
-          'access arguments' => array('administer uploadcare'),
-          'type' => MENU_NORMAL_ITEM
-     );
-     return $items;
+  $items['admin/settings/uploadcare'] = array(
+    'title' => 'Uploadcare Settings',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('uploadcare_admin'),
+    'access arguments' => array('administer uploadcare'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+  return $items;
 }
