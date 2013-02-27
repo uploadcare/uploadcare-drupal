@@ -38,6 +38,9 @@ Just upload an image with new field and it will be displayed for the new content
 
 ## Downloads
 
+**1.0.3** ([Download](https://ucarecdn.com/14c42caf-f5bd-4488-ab30-97b3b5079f3c/uploadcare-drupal_1.0.3.zip))
+*Bugfixes
+
 **1.0.2** ([Download](https://ucarecdn.com/11f02ead-fd66-4108-aedd-b3394b324d73/uploadcare-drupal_1.0.2.zip))
 * Bugfixes
 
