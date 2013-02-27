@@ -12,9 +12,20 @@ It's based on a [uploadcare-php][4] library.
 
 ## Install 
 
+### From github
+
 Clone module from git to your plugins directory:
 
     git clone git://github.com/uploadcare/uploadcare-drupal.git modules/uploadcare --recursive
+    
+### Drupal git
+
+	git clone http://git.drupal.org/sandbox/grayhound/1905848.git modules/uploadcare --recursive
+	git clone git://github.com/uploadcare/uploadcare-php.git modules/uploadcare-php --recursive
+	
+### Using zip-package
+
+Download the release from Downloads section and unzip it under "modules" directory.
 
 Activate plugin at "Modules" section.
 
