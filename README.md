@@ -21,7 +21,7 @@ Clone module from git to your plugins directory:
 ### Drupal git
 
 	git clone http://git.drupal.org/sandbox/grayhound/1905848.git modules/uploadcare --recursive
-	git clone git://github.com/uploadcare/uploadcare-php.git modules/uploadcare-php --recursive
+	git clone git://github.com/uploadcare/uploadcare-php.git modules/uploadcare/uploadcare-php --recursive
 	
 ### Using zip-package
 
