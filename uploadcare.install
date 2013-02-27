@@ -33,3 +33,11 @@ function uploadcare_field_schema($field) {
     ),
   );
 }
+
+/**
+ * Implementation of hook_uninstall().
+ */
+function uploadcare_uninstall() {
+  variable_del('uploadcare_public_key');
+  variable_del('uploadcare_secret_key');
+}

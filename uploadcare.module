@@ -5,10 +5,10 @@
  */
 
 // Load field hooks.
-require_once DRUPAL_ROOT . '/modules/uploadcare/uploadcare.field.inc';
+require_once drupal_get_path('module', 'uploadcare') . '/uploadcare.field.inc';
 
 /**
- * Admin settings.
+ * Implements hook_admin().
  */
 function uploadcare_admin() {
   $form = array();
@@ -30,7 +30,7 @@ function uploadcare_admin() {
 }
 
 /**
- * Admin menu.
+ * Implements hook_menu().
  */
 function uploadcare_menu() {
   $items['admin/settings/uploadcare'] = array(
