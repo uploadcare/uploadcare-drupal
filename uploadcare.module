@@ -8,6 +8,20 @@
 require_once drupal_get_path('module', 'uploadcare') . '/uploadcare.field.inc';
 
 /**
+ * Implements hook_menu().
+ */
+function uploadcare_menu() {
+  $items['admin/settings/uploadcare'] = array(
+    'title' => 'Uploadcare Settings',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('uploadcare_admin'),
+    'access arguments' => array('administer uploadcare'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+  return $items;
+}
+
+/**
  * Implements hook_admin().
  */
 function uploadcare_admin() {
@@ -27,18 +41,4 @@ function uploadcare_admin() {
     '#maxlength' => 256,
   );
   return system_settings_form($form);
-}
-
-/**
- * Implements hook_menu().
- */
-function uploadcare_menu() {
-  $items['admin/settings/uploadcare'] = array(
-    'title' => 'Uploadcare Settings',
-    'page callback' => 'drupal_get_form',
-    'page arguments' => array('uploadcare_admin'),
-    'access arguments' => array('administer uploadcare'),
-    'type' => MENU_NORMAL_ITEM,
-  );
-  return $items;
 }
