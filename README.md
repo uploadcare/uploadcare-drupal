@@ -12,9 +12,20 @@ It's based on a [uploadcare-php][4] library.
 
 ## Install 
 
+### From github
+
 Clone module from git to your plugins directory:
 
     git clone git://github.com/uploadcare/uploadcare-drupal.git modules/uploadcare --recursive
+    
+### Drupal git
+
+	git clone http://git.drupal.org/sandbox/grayhound/1905848.git modules/uploadcare --recursive
+	git clone git://github.com/uploadcare/uploadcare-php.git modules/uploadcare/uploadcare-php --recursive
+	
+### Using zip-package
+
+Download the release from Downloads section and unzip it under "modules" directory.
 
 Activate plugin at "Modules" section.
 
@@ -37,6 +48,9 @@ Just upload an image with new field and it will be displayed for the new content
 [More information on file operations can be found here][2]
 
 ## Downloads
+
+**1.0.3** ([Download](https://ucarecdn.com/14c42caf-f5bd-4488-ab30-97b3b5079f3c/uploadcare-drupal_1.0.3.zip))
+* Bugfixes
 
 **1.0.2** ([Download](https://ucarecdn.com/11f02ead-fd66-4108-aedd-b3394b324d73/uploadcare-drupal_1.0.2.zip))
 * Bugfixes
