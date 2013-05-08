@@ -11,7 +11,7 @@ require_once drupal_get_path('module', 'uploadcare') . '/uploadcare.field.inc';
  * Implements hook_menu().
  */
 function uploadcare_menu() {
-  $items['admin/settings/uploadcare'] = array(
+  $items['admin/config/media/uploadcare'] = array(
     'title' => 'Uploadcare Settings',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('uploadcare_admin'),

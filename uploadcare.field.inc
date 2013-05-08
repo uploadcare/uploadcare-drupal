@@ -30,7 +30,8 @@ function uploadcare_field_info() {
  */
 function uploadcare_field_settings_form($field, $instance, $has_data) {
   $settings = $field['settings'];
-  // Is image checkbox. Used to define if file should be displayed as an image or just an url for file.
+  // Is image checkbox.
+  // Used to define if file should be displayed as an image or an url for file.
   $form['is_image'] = array(
     '#type' => 'checkbox',
     '#title' => t('Is it an image?'),
@@ -39,7 +40,8 @@ function uploadcare_field_settings_form($field, $instance, $has_data) {
     '#description' => t('If the uploaded file is an image you will be able to use file operations'),
   );
 
-  // Image operations field. Find more information at https://uploadcare.com/documentation/cdn/
+  // Image operations field.
+  // Find more information at https://uploadcare.com/documentation/cdn/.
   // Crop checkbox. Used with "is_image" checkbox. Tries to apply crop settings.
   $form['crop'] = array(
     '#type' => 'checkbox',
@@ -74,7 +76,9 @@ function uploadcare_field_settings_form($field, $instance, $has_data) {
     '#default_value' => isset($field['settings']['crop_fill_color']) ? $field['settings']['crop_fill_color'] : NULL,
   );
 
-  // "Resize" checkbox. Used with "is_image" checkbox. Tries to apply resize settings.
+  // "Resize" checkbox.
+  // Used with "is_image" checkbox.
+  // Tries to apply resize settings.
   $form['resize'] = array(
     '#type' => 'checkbox',
     '#title' => t('Resize'),
@@ -95,7 +99,9 @@ function uploadcare_field_settings_form($field, $instance, $has_data) {
     '#default_value' => isset($field['settings']['resize_height']) ? $field['settings']['resize_height'] : NULL,
   );
 
-  // "Scale crop" checkbox. Used with "is_image" checkbox. Tries to apply "scale crop" settings.
+  // "Scale crop" checkbox.
+  // Used with "is_image" checkbox.
+  // Tries to apply "scale crop" settings.
   $form['scale_crop'] = array(
     '#type' => 'checkbox',
     '#title' => t('Scale crop'),
@@ -238,7 +244,8 @@ function uploadcare_field_widget_form(&$form, &$form_state, $field, $instance, $
         '#weight' => isset($element['#weight']) ? $element['#weight'] : 0,
         '#delta' => $delta,
         '#attributes' => array(
-        'role' => 'uploadcare-uploader',
+          'role' => 'uploadcare-uploader',
+          'style' => 'display: none;',
         ),
       );
       break;
@@ -253,7 +260,7 @@ function uploadcare_field_widget_form_prefix() {
   $public_key = variable_get('uploadcare_public_key');
   $secret_key = variable_get('uploadcare_secret_key');
   $api = new Uploadcare_Api($public_key, $secret_key);
-  return $api->widget->getScriptTag() . "<script>jQuery(function() {jQuery('input[role=uploadcare-uploader]').hide();});</script>";
+  return $api->widget->getScriptTag('0.8.1.2');
 }
 
 /**
@@ -360,7 +367,8 @@ function uploadcare_get_view_html($file_id, $settings) {
       $file = $file->op('stretch/off');
     }
 
-    // Final html to return. An image with all file operations with a link to the original file.
+    // Final html to return.
+    // An image with all file operations with a link to the original file.
     $html = sprintf('<a href="%s">%s</a>', $file->getUrl($filename), $file->getImgTag($filename));
   }
   else {

@@ -1,4 +1,4 @@
 name = Uploadcare
 description = "Uploadcare Drupal Module"
 core = 7.x
-configure = "admin/settings/uploadcare"
+configure = "admin/config/media/uploadcare"

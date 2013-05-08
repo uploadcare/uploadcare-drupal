@@ -35,7 +35,7 @@ function uploadcare_field_schema($field) {
 }
 
 /**
- * Implementation of hook_uninstall().
+ * Implements hook_uninstall().
  */
 function uploadcare_uninstall() {
   variable_del('uploadcare_public_key');
