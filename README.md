@@ -59,6 +59,6 @@ Just upload an image with new field and it will be displayed for the new content
 * Bugfixes
 
 [1]: https://uploadcare.com/
-[2]: https://uploadcare.com/documentation/reference/basic/cdn.html
+[2]: https://uploadcare.com/documentation/cdn/
 [3]: http://drupal.org/
 [4]: https://github.com/uploadcare/uploadcare-php
