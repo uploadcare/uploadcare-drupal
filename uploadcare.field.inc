@@ -265,7 +265,7 @@ function uploadcare_field_widget_form_prefix() {
   $public_key = variable_get('uploadcare_public_key');
   $secret_key = variable_get('uploadcare_secret_key');
   $api = new Uploadcare\Api($public_key, $secret_key);
-  return $api->widget->getScriptTag('2.5.1');
+  return $api->widget->getScriptTag(Uploadcare\Widget::version);
 }
 
 /**
