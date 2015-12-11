@@ -186,7 +186,7 @@ function uploadcare_field_validate($entity_type, $entity, $field, $instance, $la
       $file_id = $item['uploadcare'];
 
       // Start to work with api.uploadcare.com
-      $api = new Uploadcare\Api($public_key, $secret_key);
+      $api = new Uploadcare\Api($public_key, $secret_key, 'PHP Uploadcare Drupal');
 
       // Get file instance using API.
       $file = $api->getFile($file_id);
