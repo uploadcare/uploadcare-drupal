@@ -9,7 +9,12 @@
  * Connect external library. Please read more at:
  * https://github.com/uploadcare/uploadcare-php .
  */
-require_once drupal_get_path('module', 'uploadcare') . '/uploadcare-php/uploadcare/lib/5.2/Uploadcare.php';
+require_once drupal_get_path('module', 'uploadcare') . '/uploadcare-php/src/Uploadcare/Api.php';
+require_once drupal_get_path('module', 'uploadcare') . '/uploadcare-php/src/Uploadcare/File.php';
+require_once drupal_get_path('module', 'uploadcare') . '/uploadcare-php/src/Uploadcare/FileIterator.php';
+require_once drupal_get_path('module', 'uploadcare') . '/uploadcare-php/src/Uploadcare/Group.php';
+require_once drupal_get_path('module', 'uploadcare') . '/uploadcare-php/src/Uploadcare/Uploader.php';
+require_once drupal_get_path('module', 'uploadcare') . '/uploadcare-php/src/Uploadcare/Widget.php';
 
 /**
  * Implements hook_field_info().
@@ -181,7 +186,7 @@ function uploadcare_field_validate($entity_type, $entity, $field, $instance, $la
       $file_id = $item['uploadcare'];
 
       // Start to work with api.uploadcare.com
-      $api = new Uploadcare_Api($public_key, $secret_key);
+      $api = new Uploadcare\Api($public_key, $secret_key, 'PHP Uploadcare Drupal');
 
       // Get file instance using API.
       $file = $api->getFile($file_id);
@@ -259,8 +264,8 @@ function uploadcare_field_widget_form(&$form, &$form_state, $field, $instance, $
 function uploadcare_field_widget_form_prefix() {
   $public_key = variable_get('uploadcare_public_key');
   $secret_key = variable_get('uploadcare_secret_key');
-  $api = new Uploadcare_Api($public_key, $secret_key);
-  return $api->widget->getScriptTag('0.8.1.2');
+  $api = new Uploadcare\Api($public_key, $secret_key);
+  return $api->widget->getScriptTag(Uploadcare\Widget::version);
 }
 
 /**
@@ -270,6 +275,8 @@ function uploadcare_field_is_empty($item, $field) {
   if (empty($item['uploadcare'])) {
     return TRUE;
   }
+
+  return null;
 }
 
 /**
@@ -286,7 +293,7 @@ function uploadcare_get_view_html($file_id, $settings) {
   $secret_key = variable_get('uploadcare_secret_key');
 
   // Connect to api.uploadcare.com
-  $api = new Uploadcare_Api($public_key, $secret_key);
+  $api = new Uploadcare\Api($public_key, $secret_key);
 
   // Will be used further to define final html.
   $is_image = $settings['is_image'];

@@ -7,7 +7,7 @@ It's based on a [uploadcare-php][4] library.
 ## Requirements
 
 - Drupal 7.x+
-- PHP 5.2+
+- PHP 5.3+
 - php-curl
 
 ## Install 
@@ -16,12 +16,12 @@ It's based on a [uploadcare-php][4] library.
 
 Clone module from git to your plugins directory:
 
-    git clone git://github.com/uploadcare/uploadcare-drupal.git modules/uploadcare --recursive
+    git clone git://github.com/uploadcare/uploadcare-drupal.git sites/default/modules/uploadcare --recursive
 	
 ### Drupal git
 
-	  git clone http://git.drupal.org/sandbox/grayhound/1905848.git modules/uploadcare --recursive
-	  git clone git://github.com/uploadcare/uploadcare-php.git modules/uploadcare/uploadcare-php --recursive
+	  git clone http://git.drupal.org/sandbox/grayhound/1905848.git sites/default/modules/uploadcare --recursive
+	  git clone git://github.com/uploadcare/uploadcare-php.git sites/default/modules/uploadcare/uploadcare-php --recursive
 	
 ### Using zip-package
 
