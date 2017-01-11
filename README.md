@@ -58,6 +58,22 @@ Just upload an image with new field and it will be displayed for the new content
 **1.0.1** ([Download](https://ucarecdn.com/db0033ad-c84a-498e-8ca9-c01e6d49510a/uploadcare-drupal_1.0.1.zip))
 * Bugfixes
 
+## Contributors
+
+- [@grayhound](https://github.com/grayhound)
+- [@dmitry-mukhin](https://github.com/dmitry-mukhin)
+- [@dimaninc](https://github.com/dimaninc)
+
+## Security issues
+
+If you think you ran into something in Uploadcare libraries
+which might have security implications, please hit us up at
+[bugbounty@uploadcare.com](mailto:bugbounty@uploadcare.com)
+or Hackerone.
+
+We'll contact you personally in a short time to fix an issue
+through co-op and prior to any public disclosure.
+
 [1]: https://uploadcare.com/
 [2]: https://uploadcare.com/documentation/cdn/
 [3]: http://drupal.org/
